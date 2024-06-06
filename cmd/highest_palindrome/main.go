@@ -37,11 +37,16 @@ func highestPalindrome(s string, k int) string {
 	}
 
 	left, right := 0, n-1
-	for left <= right {
+	var maximizePalindrome func(left, right int)
+	maximizePalindrome = func(left, right int) {
+		if left > right {
+			return
+		}
 		if left == right {
 			if k > 0 {
 				str[left] = '9'
 			}
+			return
 		}
 		if str[left] < '9' {
 			if k >= 2 && str[left] == s[left] && str[right] == s[right] {
@@ -52,9 +57,10 @@ func highestPalindrome(s string, k int) string {
 				str[left], str[right] = '9', '9'
 			}
 		}
-		left++
-		right--
+		maximizePalindrome(left+1, right-1)
 	}
+
+	maximizePalindrome(left, right)
 
 	return string(str)
 }
