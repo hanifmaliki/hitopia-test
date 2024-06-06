@@ -6,7 +6,7 @@ import (
 
 func balancedBracket(s string) string {
 	stack := []rune{}
-	matchingBrackets := map[rune]rune{
+	bracketPairs := map[rune]rune{
 		')': '(',
 		'}': '{',
 		']': '[',
@@ -17,7 +17,7 @@ func balancedBracket(s string) string {
 		case '(', '{', '[':
 			stack = append(stack, char)
 		case ')', '}', ']':
-			if len(stack) == 0 || stack[len(stack)-1] != matchingBrackets[char] {
+			if len(stack) == 0 || stack[len(stack)-1] != bracketPairs[char] {
 				return "NO"
 			}
 			// Delete last char in stack
