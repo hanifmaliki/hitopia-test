@@ -1,5 +1,11 @@
 # Hitopia Test
 
+## How to run
+- Check Makefile
+`make test-1`
+`make test-2`
+`make test-3`
+
 # Balanced Bracket
 
 ## Kompleksitas
