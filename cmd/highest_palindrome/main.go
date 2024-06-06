@@ -71,5 +71,6 @@ func main() {
 	fmt.Println(highestPalindrome("12321", 1))         // Output: "12921"
 	fmt.Println(highestPalindrome("12345", 1))         // Output: "-1"
 	fmt.Println(highestPalindrome("5533325233355", 5)) // Output: "9933329233399"
+	fmt.Println(highestPalindrome("12345", 3))         // Output: "94349"
 	fmt.Println(highestPalindrome("12345", 6))         // Output: "99999" // Cukup 5 sebenernya, tapi di peraturan tidak ada keterangan jadi -1 kalo k > length
 }
